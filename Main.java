@@ -46,4 +46,3 @@ public class Main {
         System.out.println("La cantidad de números que usted ha decidido ordenar los puede visualizar en el archivo sorted_numbers.txt");
     }
 }
-
