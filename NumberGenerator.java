@@ -1,12 +1,12 @@
+//Clase que genera los números aleatorios.
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Random;
 import java.util.Arrays;
 import java.util.Random;
-import java.io.*;
 
 public class NumberGenerator {
     public static void generateNumbers(int count) {
@@ -27,6 +27,15 @@ public class NumberGenerator {
         } catch (IOException e) {
             e.printStackTrace();
             return new Integer[0];
+        }
+    }
+
+    public static int[] readIntNumbers() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("numbers.txt"))) {
+            return reader.lines().mapToInt(Integer::parseInt).toArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new int[0];
         }
     }
 
@@ -54,7 +63,4 @@ public class NumberGenerator {
         saveSortedNumbers(numbers);
     }
 }
-
-
-
 

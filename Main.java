@@ -19,6 +19,7 @@ public class Main {
         System.out.println("¿Cuántos de los 3000 números generados desea ordenar?");
         int count = scanner.nextInt();
         System.out.println("-------------------------------------------------------------------------------------------------------------");
+
         // Asegurarse de que el conteo no exceda la longitud del arreglo
         count = Math.min(count, numbers.length);
 
@@ -27,7 +28,6 @@ public class Main {
 
         // Gnome Sort
         Profiler.profileSort("Gnome Sort", numbersToSort, GnomeSort::sort);
-
 
         // Guardar los números ordenados por Gnome Sort en un archivo de texto
         NumberGenerator.saveSortedNumbers(numbersToSort);
